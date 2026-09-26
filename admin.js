@@ -1,4 +1,13 @@
 // ===== SUPABASE CONFIG =====
+window.onerror = function(message) {
+  alert("ERROR: " + message);
+};
+
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("loginForm").addEventListener("submit", function() {
+    alert("LOGIN BUTTON WORKING");
+  });
+});
 const SUPABASE_URL = "https://dyxfrxuiogqpjhibvesk.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_4Pv-BiMKeGkWQGYfj2Octw_h_Cr1ZER";
 
