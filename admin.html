@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aspirants Family Odisha - Admin</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>ASPIRANTS FAMILY ODISHA</h1>
+        <p>Admin Dashboard</p>
+    </header>
+
+    <main>
+
+        <!-- LOGIN SECTION -->
+        <section id="loginCard">
+            <h2>Admin Login</h2>
+
+            <form id="loginForm">
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter admin email"
+                    required
+                >
+
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter password"
+                    required
+                >
+
+                <button type="submit">Login</button>
+                <p id="loginMsg"></p>
+            </form>
+        </section>
+
+        <!-- ADMIN DASHBOARD -->
+        <section id="app" hidden>
+
+            <div class="dashboard-header">
+                <h2>Admin Dashboard</h2>
+                <button type="button" id="logout">Logout</button>
+            </div>
+
+            <!-- ADD VACANCY FORM -->
+            <section class="form-section">
+                <h2 id="heading">Add New Vacancy</h2>
+
+                <form id="jobForm">
+
+                    <input type="hidden" id="jobId">
+
+                    <label for="title">Vacancy Title</label>
+                    <input
+                        type="text"
+                        id="title"
+                        placeholder="e.g. OSSSC Forester"
+                        required
+                    >
+
+                    <label for="organization">Organization</label>
+                    <input
+                        type="text"
+                        id="organization"
+                        placeholder="e.g. OSSSC"
+                        required
+                    >
+
+                    <label for="category">Category</label>
+                    <select id="category" required>
+                        <option value="">Select Category</option>
+                        <option value="Central Government">Central Government</option>
+                        <option value="Odisha Government">Odisha Government</option>
+                        <option value="Railway">Railway</option>
+                        <option value="Police">Police</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <label for="lastDate">Last Date</label>
+                    <input type="date" id="lastDate">
+
+                    <label for="pdfUrl">Notification PDF Link</label>
+                    <input
+                        type="url"
+                        id="pdfUrl"
+                        placeholder="Paste PDF link"
+                    >
+
+                    <label for="applyUrl">Apply Online Link</label>
+                    <input
+                        type="url"
+                        id="applyUrl"
+                        placeholder="Paste application link"
+                    >
+
+                    <label for="description">Description</label>
+                    <textarea
+                        id="description"
+                        rows="5"
+                        placeholder="Enter vacancy details"
+                    ></textarea>
+
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="active" checked>
+                        Publish Vacancy
+                    </label>
+
+                    <button type="submit">Save Vacancy</button>
+                    <p id="formMsg"></p>
+
+                </form>
+            </section>
+
+            <!-- VACANCY LIST -->
+            <section class="vacancy-section">
+                <div class="list-header">
+                    <h2>Manage Vacancies</h2>
+                    <button type="button" id="refresh">Refresh</button>
+                </div>
+
+                <div id="jobs">
+                    Loading vacancies...
+                </div>
+            </section>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Aspirants Family Odisha</p>
+        <p>Study Materials | Previous Year Questions | Recruitment Updates</p>
+    </footer>
+
+    <!-- Supabase Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Admin JavaScript -->
+    <script src="admin.js" defer></script>
+
+</body>
+</html>
