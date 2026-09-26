@@ -24,3 +24,12 @@ h1 span{color:var(--blue)}.lead{font-size:18px;max-width:650px;color:#667085}
 .socials{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}.socials a{padding:14px 20px;border:1px solid #ddd;border-radius:12px;text-decoration:none;color:var(--dark);font-weight:700;background:white}
 footer{background:var(--dark);color:white;padding:28px 0}.footer{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}.footer span,.footer small{color:#98a2b3}
 @media(max-width:800px){.menu{display:block}nav{display:none;position:absolute;left:0;right:0;top:70px;background:white;padding:20px;flex-direction:column;border-bottom:1px solid #ddd}nav.show{display:flex}.hero-grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.hero{padding:55px 0}.section{padding:55px 0}.test-box{flex-direction:column;align-items:flex-start}}
+.whatsapp-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  color: white;
+  background: #25D366;
+}
