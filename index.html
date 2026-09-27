@@ -145,7 +145,7 @@ async function loadJobs() {
     .order("created_at", { ascending: false });
 
   if (error) {
-    box.textContent = "Vacancies load nahi hui. Please try again.";
+    box.textContent = "Error: " + error.message;
     console.error(error);
     return;
   }
