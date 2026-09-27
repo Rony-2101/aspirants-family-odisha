@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Aspirants Family Odisha - Government job updates, syllabus, previous year questions and study materials.">
+<title>Aspirants Family Odisha</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #222;
+  line-height: 1.6;
+}
+
+header {
+  background: #123c69;
+  color: white;
+  padding: 16px;
+}
+
+.container {
+  width: 92%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.brand {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.hero {
+  background: linear-gradient(135deg, #123c69, #2563a6);
+  color: white;
+  padding: 55px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  background: #ffb703;
+  color: #222;
+  padding: 10px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.btn.secondary {
+  background: white;
+  color: #123c69;
+}
+
+section {
+  padding: 35px 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.section-title h2 {
+  color: #123c69;
+  font-size: 25px;
+}
+
+.search {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 2px 10px #00000012;
+  border: 1px solid #e5e7eb;
+}
+
+.card h3 {
+  color: #123c69;
+  margin-bottom: 8px;
+}
+
+.card p {
+  margin: 5px 0;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.card-buttons {
+  margin-top: 12px;
+}
+
+.card-buttons a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  margin: 4px 3px 0 0;
+  font-size: 13px;
+  font-weight: bold;
+  background: #123c69;
+  color: white;
+}
+
+.card-buttons a.pdf {
+  background: #198754;
+}
+
+.status {
+  text-align: center;
+  padding: 20px;
+  color: #555;
+}
+
+.info {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+.info h3 {
+  color: #123c69;
+  margin-bottom: 8px;
+}
+
+footer {
+  background: #123c69;
+  color: white;
+  text-align: center;
+  padding: 22px 10px;
+  margin-top: 25px;
+}
+
+footer a {
+  color: #ffcf55;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .hero h1 {
+    font-size: 24px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container navbar">
+    <div class="brand">🇮🇳 ASPIRANTS FAMILY ODISHA</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#jobs">Latest Jobs</a>
+      <a href="#study">Study Material</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="container">
+    <h1>Prepare Smart. Achieve Your Goal.</h1>
+    <p>Government job updates, syllabus, PYQs, PDFs and study materials — all in one place.</p>
+    <a href="#jobs" class="btn">Latest Recruitment</a>
+    <a href="#study" class="btn secondary">Study Materials</a>
+  </div>
+</section>
+
+<section id="jobs">
+  <div class="container">
+    <div class="section-title">
+      <h2>Latest Recruitment</h2>
+      <p>Latest government job updates for aspirants</p>
+    </div>
+
+    <input
+      type="search"
+      id="search"
+      class="search"
+      placeholder="Search job, organization or category..."
+      aria-label="Search vacancies"
+    >
+
+    <div id="vacancy-list" class="cards">
+      <p class="status">Loading vacancies...</p>
+    </div>
+  </div>
+</section>
+
+<section id="study">
+  <div class="container">
+    <div class="section-title">
+      <h2>Study Materials</h2>
+      <p>Prepare for your next examination</p>
+    </div>
+
+    <div class="cards">
+      <div class="info">
+        <h3>📚 Syllabus & Notes</h3>
+        <p>Subject-wise syllabus and useful preparation notes.</p>
+      </div>
+
+      <div class="info">
+        <h3>📝 Previous Year Questions</h3>
+        <p>Practice previous year questions for competitive exams.</p>
+      </div>
+
+      <div class="info">
+        <h3>📄 PDF Library</h3>
+        <p>Study PDFs and exam preparation resources.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-title">
+      <h2>Contact Us</h2>
+    </div>
+    <div class="info" style="text-align:center">
+      <p>Join our WhatsApp group for updates.</p>
+      <a class="btn" href="https://chat.whatsapp.com/EOTi8bdmJ0m1jahryVPfK3" target="_blank" rel="noopener">
+        Join WhatsApp Group
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p>© 2026 Aspirants Family Odisha</p>
+  <p>Study • Practice • Improve • Succeed</p>
+</footer>
+
+<script>
+const API_URL = "";
+
+const vacancyList = document.getElementById("vacancy-list");
+const searchInput = document.getElementById("search");
+
+let allJobs = [];
+
+function safeText(value) {
+  return String(value ?? "");
+}
+
+function makeLink(url, label, className = "https://script.google.com/macros/s/AKfycbwmFYpIGM9pP-kfoFsUivRpSlkTe2m0VK3JyMenahTnSVRgrmej2XIq_ODTuGZLlcg43Q/exec") {
+  if (!url || !/^https?:\/\//i.test(url)) return "";
+  return `<a class="${className}" href="${url.replace(/&/g, "&amp;").replace(/"/g, "&quot;")}" target="_blank" rel="noopener noreferrer">${label}</a>`;
+}
+
+function displayJobs(jobs) {
+  vacancyList.innerHTML = "";
+
+  if (!jobs.length) {
+    vacancyList.innerHTML = '<p class="status">No vacancies found.</p>';
+    return;
+  }
+
+  jobs.forEach(job => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    const title = document.createElement("h3");
+    title.textContent = safeText(job.title || "Untitled Vacancy");
+
+    const organization = document.createElement("p");
+    organization.textContent = "Organization: " + safeText(job.organization);
+
+    const category = document.createElement("p");
+    category.textContent = "Category: " + safeText(job.category);
+
+    const lastDate = document.createElement("p");
+    lastDate.textContent = "Last Date: " + safeText(job.last_date);
+
+    const description = document.createElement("p");
+    description.textContent = safeText(job.description);
+
+    const buttons = document.createElement("div");
+    buttons.className = "card-buttons";
+
+    buttons.innerHTML =
+      makeLink(job.pdf_url || job.pdf_link, "Download PDF", "pdf") +
+      makeLink(job.apply_url, "Apply Online");
+
+    card.append(title, organization, category, lastDate, description, buttons);
+    vacancyList.appendChild(card);
+  });
+}
+
+async function loadJobs() {
+  if (API_URL === "PASTE_YOUR_WEB_APP_URL_HERE") {
+    vacancyList.innerHTML =
+      '<p class="status">Please add your Apps Script Web App URL in the code.</p>';
+    return;
+  }
+
+  try {
+    const response = await fetch(API_URL);
+
+    if (!response.ok) {
+      throw new Error("Server error: " + response.status);
+    }
+
+    const data = await response.json();
+
+    if (!Array.isArray(data)) {
+      throw new Error("Invalid data received");
+    }
+
+    allJobs = data.filter(job =>
+      String(job.active ?? "yes").trim().toLowerCase() === "yes"
+    );
+
+    displayJobs(allJobs);
+  } catch (error) {
+    console.error(error);
+    vacancyList.innerHTML =
+      '<p class="status">Vacancies load nahi ho paayi. Please try again later.</p>';
+  }
+}
+
+searchInput.addEventListener("input", function () {
+  const query = this.value.toLowerCase().trim();
+
+  const filtered = allJobs.filter(job =>
+    [
+      job.title,
+      job.organization,
+      job.category,
+      job.description
+    ].some(value => safeText(value).toLowerCase().includes(query))
+  );
+
+  displayJobs(filtered);
+});
+
+loadJobs();
+</script>
+
+</body>
+</html>
