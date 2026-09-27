@@ -134,8 +134,7 @@ const supabaseKey = "sb_publishable_4Pv-BiMKeGkWQGYfj2Octw_h_Cr1ZER";
 const db = window.supabase.createClient(supabaseUrl, supabaseKey);
 
 async function loadJobs() {
-  const box = document.getElementById("public-jobs");
-  if (!box) return;
+  const box = document.getElementById("vacancy-list");
 
   box.textContent = "Loading vacancies...";
 
