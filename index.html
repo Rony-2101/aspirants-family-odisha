@@ -61,15 +61,7 @@
     </div>
   </div>
 </section>
-  <div class="container">
-    <div class="section-title"><p class="tag">STAY UPDATED</p><h2>Latest Recruitment</h2><p>Add your latest vacancy posts here.</p></div>
-    <div class="cards">
-      <article class="card"><div class="icon">📢</div><h3>Government Jobs</h3><p>Latest central & Odisha government recruitment updates.</p><a href="#">View Updates →</a></article>
-      <article class="card"><div class="icon">🏛️</div><h3>Odisha Jobs</h3><p>OSSC, OSSSC, OPSC and other Odisha vacancies.</p><a href="#">View Updates →</a></article>
-      <article class="card"><div class="icon">🚆</div><h3>Railway Jobs</h3><p>RRB recruitment, syllabus, notices and preparation.</p><a href="#">View Updates →</a></article>
-    </div>
-  </div>
-</section>
+
 
 <section id="study" class="section alt">
   <div class="container">
@@ -130,6 +122,85 @@ class="whatsapp-btn">💬 WhatsApp Group</a>
 
 <script>
 function toggleMenu(){document.getElementById('navlinks').classList.toggle('show')}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const supabaseUrl = "https://dyxfrxuiogqpjhibvesk.supabase.co";
+const supabaseKey = "sb_publishable_4Pv-BiMKeGkWQGYfj2Octw_h_Cr1ZER";
+
+const db = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+async function loadJobs() {
+  const box = document.getElementById("public-jobs");
+  if (!box) return;
+
+  box.textContent = "Loading vacancies...";
+
+  const { data, error } = await db
+    .from("jobs")
+    .select("*")
+    .eq("active", true)
+    .order("created_at", { ascending: false });
+
+  if (error) {
+    box.textContent = "Vacancies load nahi hui. Please try again.";
+    console.error(error);
+    return;
+  }
+
+  box.replaceChildren();
+
+  if (!data || data.length === 0) {
+    box.textContent = "Abhi koi vacancy available nahi hai.";
+    return;
+  }
+
+  data.forEach(job => {
+    const card = document.createElement("article");
+    card.className = "card";
+
+    const title = document.createElement("h3");
+    title.textContent = job.title || "";
+
+    const org = document.createElement("p");
+    org.textContent = job.organization || "";
+
+    const category = document.createElement("p");
+    category.textContent = "Category: " + (job.category || "N/A");
+
+    const date = document.createElement("p");
+    date.textContent = "Last Date: " + (job.last_date || "N/A");
+
+    const desc = document.createElement("p");
+    desc.textContent = job.description || "";
+
+    card.append(title, org, category, date, desc);
+
+    if (job.pdf_url) {
+      const pdf = document.createElement("a");
+      pdf.href = job.pdf_url;
+      pdf.textContent = "Notification PDF";
+      pdf.target = "_blank";
+      pdf.rel = "noopener";
+      pdf.className = "btn primary";
+      card.appendChild(pdf);
+    }
+
+    if (job.apply_url) {
+      const apply = document.createElement("a");
+      apply.href = job.apply_url;
+      apply.textContent = "Apply Online";
+      apply.target = "_blank";
+      apply.rel = "noopener";
+      apply.className = "btn primary";
+      card.appendChild(apply);
+    }
+
+    box.appendChild(card);
+  });
+}
+
+loadJobs();
 </script>
 </body>
 </html>
