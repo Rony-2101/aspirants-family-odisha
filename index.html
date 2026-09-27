@@ -153,7 +153,7 @@ async function loadJobs() {
   box.replaceChildren();
 
   if (!data || data.length === 0) {
-    box.textContent = "Abhi koi vacancy available nahi hai.";
+    box.textContent = "Error: " + error.message;
     return;
   }
 
